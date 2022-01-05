@@ -13,5 +13,5 @@ Such as these logs created by Multiplayer Dynamic Bones below Player names of co
 <img width="579" alt="image" src="https://user-images.githubusercontent.com/31026406/148161481-50f16b8d-bc7a-4ee2-959c-99398acb9bfc.png">
 
 <h2 align="center"> Credits </h2>
-- Myself for [MezLoggerAPI](https://github.com/Mezque/MezLoggerAPI) <br />
-- [xKiraiChan](https://github.com/xKiraiChan) for the mod idea and teaching me about CallbackHandler being a thing <br />
+‣ Myself for [MezLoggerAPI](https://github.com/Mezque/MezLoggerAPI) <br />
+‣ [xKiraiChan](https://github.com/xKiraiChan) for the mod idea and teaching me about CallbackHandler being a thing <br />
