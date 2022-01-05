@@ -9,4 +9,4 @@ Current known bugs/issues:
 <img width="1006" alt="image" src="https://user-images.githubusercontent.com/31026406/148160919-08db3436-df08-4096-88b2-29cd679bddcd.png">
 like so but that is quite a bit longer then the average mod logs to the console 
 <img width="579" alt="image" src="https://user-images.githubusercontent.com/31026406/148161481-50f16b8d-bc7a-4ee2-959c-99398acb9bfc.png">
-Such as these logs created by Multiplayer Dynamic Bones _player mames of course blurred out for user security_
+Such as these logs created by Multiplayer Dynamic Bones _Player names of course blurred out for user secuirty_
