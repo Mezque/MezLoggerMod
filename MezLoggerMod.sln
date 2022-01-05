@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MezLoggerMod", "MezLoggerMod\MezLoggerMod.csproj", "{942034FA-2218-4E3B-A088-4A365ABE90B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{942034FA-2218-4E3B-A088-4A365ABE90B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942034FA-2218-4E3B-A088-4A365ABE90B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942034FA-2218-4E3B-A088-4A365ABE90B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942034FA-2218-4E3B-A088-4A365ABE90B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24AA21FE-3DD2-4224-AD20-C0865D5C37EB}
+	EndGlobalSection
+EndGlobal
