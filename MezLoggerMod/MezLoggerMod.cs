@@ -5,7 +5,7 @@ using System.Collections;
 using TMPro;
 using Obj = UnityEngine.GameObject;
 
-[assembly: MelonInfo(typeof(MezLogger.MezLogger), "MezLogger", "0.1.0", "Mezque", "github.com/Mezque/MezLoggerMod")]
+[assembly: MelonInfo(typeof(MezLogger.MezLogger), "MezLogger", "0.2.0", "Mezque", "github.com/Mezque/MezLoggerMod")]
 namespace MezLogger
     {
     public class MezLogger : MelonMod
@@ -21,7 +21,7 @@ namespace MezLogger
 
         private static string ClientName = "MezLogger";
         private static string PrimaryColour = "#6A329F";
-        private static Color SecondaryColour = new Color(0f, 1f, 1f, 1f);
+        private static string SecondaryColour = "#a1dcff";
         private static Vector3 UIPosition = new Vector3(-20, -300, 0);
         private static float TextSpacing = 25f;
         public static IEnumerator MakeUI()
@@ -40,7 +40,6 @@ namespace MezLogger
             GUI.gameObject.AddComponent<ContentSizeFitter>().horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
             GUI.gameObject.AddComponent<VerticalLayoutGroup>().spacing = TextSpacing;
             var textMesh = text.GetComponent<TextMeshProUGUI>();
-            textMesh.color = SecondaryColour;
             textMesh.alignment = TextAlignmentOptions.Left;
             textMesh.text = $"<color={PrimaryColour}>[{ClientName}]</color> ";
             yield return new WaitForEndOfFrame();
@@ -51,18 +50,19 @@ namespace MezLogger
         public static void Warn(string Text, float Timer) => MelonCoroutines.Start(MezText(Text, 3, Timer));
 
         private static IEnumerator MezText(string Text, int TextType, float timeBeforeDeletion)
-        {
+            {
             GameObject textObj;
-                try
+            try
 
-                { textObj = Object.Instantiate(Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule/Text").gameObject, Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule").transform);
+                {
+                textObj = Object.Instantiate(Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule/Text").gameObject, Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule").transform);
                 var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                textMesh.text += TextType switch { 1 => "", 2 => "<color=red>[ERROR]</color> ", 3 => "<color=yellow>[Warning]</color> ", _ => "Something broke whoops" } + Text;
+                textMesh.text += TextType switch { 1 => "", 2 => "<color=red>[ERROR]</color> ", 3 => "<color=yellow>[Warning]</color> ", _ => "Something broke whoops" } + $"<color={SecondaryColour}>{Text}</color>";
                 textObj.SetActive(true);
                 }
-                catch{yield break;}
-                yield return new WaitForSeconds(timeBeforeDeletion);
-                Obj.Destroy(textObj);
+            catch { yield break; }
+            yield return new WaitForSeconds(timeBeforeDeletion);
+            Obj.Destroy(textObj);
+            }
         }
     }
-}
