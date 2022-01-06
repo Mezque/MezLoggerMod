@@ -14,9 +14,9 @@ namespace MezLogger
             {
             MelonCoroutines.Start(MakeUI());
 
-            MelonLogger.MsgCallbackHandler += (_, __, a, b) => Msg($"{b}", 2); //thank you xKiraiChan for helping with this part and for giving this mod idea :)
-            MelonLogger.WarningCallbackHandler += (a, b) => Msg($"{b}", 2);
-            MelonLogger.ErrorCallbackHandler += (a, b) => Msg($"{b}", 2);
+            MelonLogger.MsgCallbackHandler += (_, __, a, b) => MelonCoroutines.Start(MezText(b, 1, 2)); //thank you xKiraiChan for helping with this part and for giving this mod idea :)
+            MelonLogger.WarningCallbackHandler += (a, b) => MelonCoroutines.Start(MezText(b, 2, 4));
+            MelonLogger.ErrorCallbackHandler += (a, b) => MelonCoroutines.Start(MezText(b, 3, 6));
             }
 
         private static string ClientName = "MezLogger";
@@ -45,10 +45,7 @@ namespace MezLogger
             yield return new WaitForEndOfFrame();
             text.SetActive(false);
             }
-        public static void Msg(string Text, float Timer) => MelonCoroutines.Start(MezText(Text, 1, Timer));
-        public static void Error(string Text, float Timer) => MelonCoroutines.Start(MezText(Text, 2, Timer));
-        public static void Warn(string Text, float Timer) => MelonCoroutines.Start(MezText(Text, 3, Timer));
-
+        
         private static IEnumerator MezText(string Text, int TextType, float timeBeforeDeletion)
             {
             GameObject textObj;
